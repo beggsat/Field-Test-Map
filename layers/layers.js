@@ -70,18 +70,35 @@ var lyr_TestsbyRSRP_3 = new ol.layer.Vector({
     <img src="styles/legend/TestsbyRSRP_3_2.png" /> -80 - -70<br />\
     <img src="styles/legend/TestsbyRSRP_3_3.png" /> -70 - -62<br />'
         });
+var format_tower_4 = new ol.format.GeoJSON();
+var features_tower_4 = format_tower_4.readFeatures(json_tower_4, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_tower_4 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_tower_4.addFeatures(features_tower_4);
+var lyr_tower_4 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_tower_4, 
+                style: style_tower_4,
+                interactive: true,
+                title: '<img src="styles/legend/tower_4.png" /> tower'
+            });
 
-lyr_OpenStreetMap_0.setVisible(true);lyr_TestsbyULMbps_1.setVisible(false);lyr_TestsbyDLMbps_2.setVisible(false);lyr_TestsbyRSRP_3.setVisible(true);
-var layersList = [lyr_OpenStreetMap_0,lyr_TestsbyULMbps_1,lyr_TestsbyDLMbps_2,lyr_TestsbyRSRP_3];
+lyr_OpenStreetMap_0.setVisible(true);lyr_TestsbyULMbps_1.setVisible(false);lyr_TestsbyDLMbps_2.setVisible(false);lyr_TestsbyRSRP_3.setVisible(true);lyr_tower_4.setVisible(true);
+var layersList = [lyr_OpenStreetMap_0,lyr_TestsbyULMbps_1,lyr_TestsbyDLMbps_2,lyr_TestsbyRSRP_3,lyr_tower_4];
 lyr_TestsbyULMbps_1.set('fieldAliases', {'Test_id': 'Test_id', 'Latitude': 'Latitude', 'Longitude': 'Longitude', 'App': 'App', 'Provider': 'Provider', 'DL Mbps': 'DL Mbps', 'UL Mbps': 'UL Mbps', 'Status': 'Status', 'Spectrum band': 'Spectrum band', 'Cell ID': 'Cell ID', 'Physical Cell ID': 'Physical Cell ID', 'Network': 'Network', 'Network Subtype': 'Network Subtype', 'signal_strength': 'signal_strength', 'rssi': 'rssi', 'csi_rsrp': 'csi_rsrp', 'csi_rsrq': 'csi_rsrq', 'csi_sinr': 'csi_sinr', 'tests.download.cells.beginning.arfcn': 'tests.download.cells.beginning.arfcn', 'Download Server': 'Download Server', 'Timestamp': 'Timestamp', 'Test Result': 'Test Result', });
 lyr_TestsbyDLMbps_2.set('fieldAliases', {'Test_id': 'Test_id', 'Latitude': 'Latitude', 'Longitude': 'Longitude', 'App': 'App', 'Provider': 'Provider', 'DL Mbps': 'DL Mbps', 'UL Mbps': 'UL Mbps', 'Status': 'Status', 'Spectrum band': 'Spectrum band', 'Cell ID': 'Cell ID', 'Physical Cell ID': 'Physical Cell ID', 'Network': 'Network', 'Network Subtype': 'Network Subtype', 'signal_strength': 'signal_strength', 'rssi': 'rssi', 'csi_rsrp': 'csi_rsrp', 'csi_rsrq': 'csi_rsrq', 'csi_sinr': 'csi_sinr', 'tests.download.cells.beginning.arfcn': 'tests.download.cells.beginning.arfcn', 'Download Server': 'Download Server', 'Timestamp': 'Timestamp', 'Test Result': 'Test Result', });
 lyr_TestsbyRSRP_3.set('fieldAliases', {'Test_id': 'Test_id', 'Latitude': 'Latitude', 'Longitude': 'Longitude', 'App': 'App', 'Provider': 'Provider', 'DL Mbps': 'DL Mbps', 'UL Mbps': 'UL Mbps', 'Status': 'Status', 'Spectrum band': 'Spectrum band', 'Cell ID': 'Cell ID', 'Physical Cell ID': 'Physical Cell ID', 'Network': 'Network', 'Network Subtype': 'Network Subtype', 'signal_strength': 'signal_strength', 'rssi': 'rssi', 'csi_rsrp': 'csi_rsrp', 'csi_rsrq': 'csi_rsrq', 'csi_sinr': 'csi_sinr', 'tests.download.cells.beginning.arfcn': 'tests.download.cells.beginning.arfcn', 'Download Server': 'Download Server', 'Timestamp': 'Timestamp', 'Test Result': 'Test Result', });
+lyr_tower_4.set('fieldAliases', {'id': 'id', 'Longitude': 'Longitude', 'Latitude': 'Latitude', });
 lyr_TestsbyULMbps_1.set('fieldImages', {'Test_id': 'TextEdit', 'Latitude': 'TextEdit', 'Longitude': 'TextEdit', 'App': 'TextEdit', 'Provider': 'TextEdit', 'DL Mbps': 'TextEdit', 'UL Mbps': 'TextEdit', 'Status': 'TextEdit', 'Spectrum band': 'TextEdit', 'Cell ID': 'Range', 'Physical Cell ID': 'Range', 'Network': 'TextEdit', 'Network Subtype': 'TextEdit', 'signal_strength': 'Range', 'rssi': 'Range', 'csi_rsrp': 'Range', 'csi_rsrq': 'Range', 'csi_sinr': 'Range', 'tests.download.cells.beginning.arfcn': 'Range', 'Download Server': 'TextEdit', 'Timestamp': 'DateTime', 'Test Result': 'TextEdit', });
 lyr_TestsbyDLMbps_2.set('fieldImages', {'Test_id': 'TextEdit', 'Latitude': 'TextEdit', 'Longitude': 'TextEdit', 'App': 'TextEdit', 'Provider': 'TextEdit', 'DL Mbps': 'TextEdit', 'UL Mbps': 'TextEdit', 'Status': 'TextEdit', 'Spectrum band': 'TextEdit', 'Cell ID': 'Range', 'Physical Cell ID': 'Range', 'Network': 'TextEdit', 'Network Subtype': 'TextEdit', 'signal_strength': 'Range', 'rssi': 'Range', 'csi_rsrp': 'Range', 'csi_rsrq': 'Range', 'csi_sinr': 'Range', 'tests.download.cells.beginning.arfcn': 'Range', 'Download Server': 'TextEdit', 'Timestamp': 'DateTime', 'Test Result': 'TextEdit', });
 lyr_TestsbyRSRP_3.set('fieldImages', {'Test_id': 'TextEdit', 'Latitude': 'TextEdit', 'Longitude': 'TextEdit', 'App': 'TextEdit', 'Provider': 'TextEdit', 'DL Mbps': 'TextEdit', 'UL Mbps': 'TextEdit', 'Status': 'TextEdit', 'Spectrum band': 'TextEdit', 'Cell ID': 'Range', 'Physical Cell ID': 'Range', 'Network': 'TextEdit', 'Network Subtype': 'TextEdit', 'signal_strength': 'Range', 'rssi': 'Range', 'csi_rsrp': 'Range', 'csi_rsrq': 'Range', 'csi_sinr': 'Range', 'tests.download.cells.beginning.arfcn': 'Range', 'Download Server': 'TextEdit', 'Timestamp': 'DateTime', 'Test Result': 'TextEdit', });
+lyr_tower_4.set('fieldImages', {'id': 'TextEdit', 'Longitude': 'TextEdit', 'Latitude': 'TextEdit', });
 lyr_TestsbyULMbps_1.set('fieldLabels', {'Test_id': 'inline label', 'Latitude': 'inline label', 'Longitude': 'inline label', 'App': 'header label', 'Provider': 'header label', 'DL Mbps': 'header label', 'UL Mbps': 'header label', 'Status': 'header label', 'Spectrum band': 'header label', 'Cell ID': 'header label', 'Physical Cell ID': 'header label', 'Network': 'header label', 'Network Subtype': 'header label', 'signal_strength': 'header label', 'rssi': 'header label', 'csi_rsrp': 'header label', 'csi_rsrq': 'header label', 'csi_sinr': 'header label', 'tests.download.cells.beginning.arfcn': 'header label', 'Download Server': 'header label', 'Timestamp': 'header label', 'Test Result': 'header label', });
 lyr_TestsbyDLMbps_2.set('fieldLabels', {'Test_id': 'inline label', 'Latitude': 'inline label', 'Longitude': 'inline label', 'App': 'header label', 'Provider': 'header label', 'DL Mbps': 'header label', 'UL Mbps': 'header label', 'Status': 'header label', 'Spectrum band': 'header label', 'Cell ID': 'header label', 'Physical Cell ID': 'header label', 'Network': 'header label', 'Network Subtype': 'header label', 'signal_strength': 'header label', 'rssi': 'header label', 'csi_rsrp': 'header label', 'csi_rsrq': 'header label', 'csi_sinr': 'header label', 'tests.download.cells.beginning.arfcn': 'header label', 'Download Server': 'header label', 'Timestamp': 'header label', 'Test Result': 'header label', });
 lyr_TestsbyRSRP_3.set('fieldLabels', {'Test_id': 'inline label', 'Latitude': 'inline label', 'Longitude': 'inline label', 'App': 'header label', 'Provider': 'header label', 'DL Mbps': 'header label', 'UL Mbps': 'header label', 'Status': 'header label', 'Spectrum band': 'header label', 'Cell ID': 'header label', 'Physical Cell ID': 'header label', 'Network': 'header label', 'Network Subtype': 'header label', 'signal_strength': 'header label', 'rssi': 'header label', 'csi_rsrp': 'header label', 'csi_rsrq': 'header label', 'csi_sinr': 'header label', 'tests.download.cells.beginning.arfcn': 'header label', 'Download Server': 'header label', 'Timestamp': 'header label', 'Test Result': 'header label', });
-lyr_TestsbyRSRP_3.on('precompose', function(evt) {
+lyr_tower_4.set('fieldLabels', {'id': 'inline label', 'Longitude': 'inline label', 'Latitude': 'inline label', });
+lyr_tower_4.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
